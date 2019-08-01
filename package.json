@@ -1,0 +1,66 @@
+{
+  "name": "@ordercloud/oc-codegen",
+  "description": "OpenAPI codegen tool built for the OrderCloud API",
+  "author": "Four51 OrderCloud",
+  "version": "0.0.0-1",
+  "main": "./lib/src/index.js",
+  "bin": {
+    "oc-codegen": "./lib/cli.js"
+  },
+  "module": "./lib/src/index.esm.js",
+  "files": [
+    "./lib/**/**"
+  ],
+  "directories": {
+    "lib": "lib"
+  },
+  "homepage": "https://public.four51.com",
+  "bugs": {
+    "url": "https://github.com/ordercloud-api/codegen/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ordercloud-api/codegen"
+  },
+  "keywords": [
+    "ordercloud",
+    "four51",
+    "b2b",
+    "openapi",
+    "swagger",
+    "ecommerce",
+    "api",
+    "headless",
+    "codegen",
+    "generator",
+    "sdk"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc -p .",
+    "release": "np"
+  },
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "clear": "^0.1.0",
+    "commander": "^2.20.0",
+    "figlet": "^1.2.3",
+    "fs-extra": "^8.1.0",
+    "handlebars": "^4.1.2",
+    "klaw": "^3.0.0",
+    "lodash": "^4.17.11",
+    "ora": "^3.4.0",
+    "swagger-parser": "^8.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^12.6.8",
+    "np": "^5.0.3",
+    "prettier": "^1.18.2",
+    "ts-node": "^8.3.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.5.2"
+  }
+}
