@@ -1,8 +1,8 @@
 ## Open API Specification
 
-The [OpenAPI Specification](https://swagger.io/docs/specification/about/) formerly known as the Swagger Specification is a standard for describing, consuming and visualizing RESTful APIs. The OrderCloud API publishes such a definition every time a new version is released. This enables OrderCloud developers to generate SDKs, API documentation and even the [Devcenter](https://developer.ordercloud.io).
+The [OpenAPI Specification](https://swagger.io/docs/specification/about/) formerly known as the Swagger Specification is a standard for describing, consuming and visualizing RESTful APIs. The OrderCloud API publishes a new definition of itself every time a new version is released. This enables OrderCloud developers to generate SDKs, API documentation, and even the [Devcenter](https://developer.ordercloud.io).
 
-This package takes an OrderCloud OpenAPI spec along with a set of templates and outputs pretty much anything. We are using it specifically with all of our javascript SDKs but our hope is that outside developers might find use in it as well. Perhaps a language that we aren't familiar with and thus would never be able to support in the way we want to might be supported by the community via this package.
+This tool takes in an OrderCloud OpenAPI spec along with a set of templates and generates an output. In our case, that output is a set of javascript SDKs but it really could be anything that needs data about the OrderCloud API. Our hope is that outside developers might find some use for it as well, perhaps for an SDK in another language not familiar to us.
 
 ## Install
 
@@ -116,7 +116,7 @@ Templates define the skeleton for how your code will be generated. We use [handl
 
 ### Template Data
 
-Each template has access to the [formatted ordercloud spec](src/models/formattedSpec.model.ts). Additionally, contextual templates get injected with data for each context (operation, resource, or model)
+Each template has access to the [formatted ordercloud spec](../src/models/formattedSpec.model.ts). Additionally, contextual templates get injected with data for each context (operation, resource, or model)
 
 The debug option will print the formatted spec to stdout which you can then pipe into a file. For example:
 
@@ -150,23 +150,23 @@ templates
 
 ### Custom Handlebars Helpers
 
-Its very likely you'll need to do some kind of data massaging in your templates this can be done easily by creating a file to register your helpers and passing the path to that file to the cli.
+Its very likely you'll need to format the data from the spec for your templates. In addition to the standard handlebars helpers you can define your own custom helpers to accomplish this.
+
+First create a file in your project like this and put your handlebars helpers in there
 
 ```javascript
 function handlebarsExt(Handlebars) {
-  // Create a file in your project like this and put your handlebars extensions in here
-
   /**
-   * Function to output the word "bar"
+   * Function to append 'bar' to the end of a word
    */
-  Handlebars.registerHelper('foo', () => {
-    return 'bar';
+  Handlebars.registerHelper('appendBar', word => {
+    return word + 'bar';
   });
 }
 module.exports = handlebarsExt;
 ```
 
-Then call the cli with the path to the file:
+Now simply use the helper in your handlebars template and then when you call the cli pass it the path to the extensions file so that the cli can register the helpers prior to compilation.
 
 <!--
 TODO: make input spec an optional parameter when
