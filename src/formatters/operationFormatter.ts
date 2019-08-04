@@ -83,7 +83,7 @@ class OperationService {
         isPathParam: false,
         isBodyParam: true,
         enum: [],
-        requiredFields: [],
+        requiredFields,
         format: '',
         maxLength: null,
         minLength: null,
