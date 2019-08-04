@@ -16,14 +16,14 @@
   },
   "homepage": "https://public.four51.com",
   "bugs": {
-    "url": "https://github.com/ordercloud-api/codegen/issues"
+    "url": "https://github.com/ordercloud-api/oc-codegen/issues"
   },
   "publishConfig": {
     "access": "public"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ordercloud-api/codegen"
+    "url": "https://github.com/ordercloud-api/oc-codegen"
   },
   "keywords": [
     "ordercloud",
