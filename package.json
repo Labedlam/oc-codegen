@@ -43,7 +43,8 @@
     "build": "npm run build:code && npm run build:docs",
     "build:code": "tsc -p .",
     "build:docs": "typedoc src/",
-    "postbuild:docs": "shx rm docs/index.html && shx mv docs/globals.html docs/index.html && sed -i 's/globals.html/index.html/g' docs/index.html"
+    "postbuild:docs": "shx rm docs/index.html && shx mv docs/globals.html docs/index.html && sed -i 's/globals.html/index.html/g' docs/index.html",
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
     "chalk": "^2.4.2",
