@@ -4,6 +4,10 @@ import utility from '../utility';
 import { OpenAPIV3 } from 'openapi-types';
 import { Param } from '../models/param.model';
 
+/**
+ * @ignore
+ * not part of public api, don't include in generated docs
+ */
 class OperationService {
   public formatOperations(paths: OpenAPIV3.PathsObject): Operation[] {
     return _.flatten(

@@ -32,6 +32,10 @@ async function generate(options: CodegenOptions) {
   );
 }
 
+/**
+ * @ignore
+ * not part of public api, don't include in generated docs
+ */
 async function generateDirectoryStructure(
   spec: FormattedSpec,
   templatesFolder: string,
@@ -126,6 +130,10 @@ async function generateDirectoryStructure(
   });
 }
 
+/**
+ * @ignore
+ * not part of public api, don't include in generated docs
+ */
 async function generateFile(
   templatesFolder: string,
   outputFolder: string,

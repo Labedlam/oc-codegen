@@ -5,6 +5,10 @@ import { ResourceWithOperations } from '../models/resourceWithOperations.model';
 import { OpenAPIV3 } from 'openapi-types';
 import utility from '../utility';
 
+/**
+ * @ignore
+ * not part of public api, don't include in generated docs
+ */
 class ResourceService {
   public formatResources(tags: OpenAPIV3.TagObject[]): Resource[] {
     return tags

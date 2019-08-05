@@ -5,6 +5,10 @@ import { OpenAPIV3 } from 'openapi-types';
 import { Dictionary } from 'lodash';
 import { Param } from '../models/param.model';
 
+/**
+ * @ignore
+ * not part of public api, don't include in generated docs
+ */
 class ModelService {
   public formatModels(
     schemas: Dictionary<

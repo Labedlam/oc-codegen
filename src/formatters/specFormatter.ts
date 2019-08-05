@@ -4,6 +4,10 @@ import resourceFormatter from './resourceFormatter';
 import { OpenAPIV3 } from 'openapi-types';
 import { FormattedSpec } from '../models/formattedSpec.model';
 
+/**
+ * @ignore
+ * not part of public api, don't include in generated docs
+ */
 class SpecFormatter {
   public formatSpec(spec: OpenAPIV3.Document): FormattedSpec {
     // format spec into something that's a little easier to work with

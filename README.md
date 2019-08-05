@@ -116,7 +116,7 @@ Templates define the skeleton for how your code will be generated. We use [handl
 
 ### Template Data
 
-Each template has access to the [formatted ordercloud spec](../src/models/formattedSpec.model.ts). Additionally, contextual templates get injected with data for each context (operation, resource, or model)
+Each template has access to the [formatted ordercloud spec](https://ordercloudapi.github.io/oc-codegen/interfaces/formattedspec.html). Additionally, contextual templates get injected with data for each context (operation, resource, or model).
 
 The debug option will print the formatted spec to stdout which you can then pipe into a file. For example:
 

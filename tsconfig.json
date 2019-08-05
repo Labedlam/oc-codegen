@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "incremental": true,
+    "incremental": false,
     "module": "commonjs",
     "declaration": true,
     "outDir": "./lib",
@@ -13,5 +13,15 @@
   "include": [
     "src/**/*",
     "cli.ts"
-  ]
+  ],
+  "typedocOptions": {
+    "mode": "file",
+    "out": "docs",
+    "name": "oc-codegen",
+    "excludeExternals": true,
+    "externalPattern": "",
+    "excludePrivate": true,
+    "excludeProtected": true,
+    "theme": "docs-templates"
+  }
 }

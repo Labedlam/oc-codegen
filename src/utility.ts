@@ -1,6 +1,10 @@
 /**
  * grab bag of small helpers used throughout
  */
+/**
+ * @ignore
+ * not part of public api, don't include in generated docs
+ */
 class Utility {
   public getType(ref?: string): string | null {
     if (!ref) {
