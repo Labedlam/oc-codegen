@@ -12,6 +12,7 @@ export interface Param {
   isQueryParam: boolean;
   isPathParam: boolean;
   isBodyParam: boolean;
+  hasRequiredFields: boolean;
   requiredFields: string[];
   enum: string[];
   format: string;

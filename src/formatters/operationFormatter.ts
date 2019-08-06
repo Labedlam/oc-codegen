@@ -63,14 +63,17 @@ class OperationService {
   private getBodyParam(requestBody): Param | null {
     let type;
     let requiredFields;
+    let hasRequiredFields;
     const schema = _.get(requestBody, 'content["application/json"].schema');
     if (schema) {
       if (schema.$ref) {
         type = utility.getType(schema.$ref);
         requiredFields = [];
+        hasRequiredFields = false;
       } else if (schema.allOf) {
         type = utility.getType(schema.allOf[0].$ref);
         requiredFields = schema.allOf.required;
+        hasRequiredFields = requiredFields.length > 0;
       }
       return {
         name: utility.makeCamelCase(type),
@@ -88,6 +91,7 @@ class OperationService {
         isBodyParam: true,
         enum: [],
         requiredFields,
+        hasRequiredFields,
         format: '',
         maxLength: null,
         minLength: null,
@@ -123,6 +127,7 @@ class OperationService {
       isPathParam: prop.in === 'path',
       isBodyParam: false,
       requiredFields: [],
+      hasRequiredFields: false,
       enum: prop.schema.enum || [],
       format: prop.schema.format || '',
       maxLength: prop.schema.maxLength || null,

@@ -53,6 +53,7 @@ class ModelService {
       isBodyParam: false,
       enum: property.enum || [],
       requiredFields: [],
+      hasRequiredFields: false,
       description: property.description || '',
       format: property.format,
       maxLength: property.maxLength,
