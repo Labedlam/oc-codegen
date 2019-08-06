@@ -2,7 +2,7 @@
   "name": "@ordercloud/oc-codegen",
   "description": "OpenAPI codegen tool built for the OrderCloud API",
   "author": "Four51 OrderCloud",
-  "version": "0.0.1-1",
+  "version": "0.0.1-2",
   "main": "./lib/src/index.js",
   "bin": {
     "oc-codegen": "./lib/cli.js"
