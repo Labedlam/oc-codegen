@@ -4,7 +4,7 @@ The [OpenAPI Specification](https://swagger.io/docs/specification/about/) former
 
 This tool takes in an OrderCloud OpenAPI spec along with a set of templates and generates an output. In our case, that output is a set of javascript SDKs but it really could be anything that needs data about the OrderCloud API. Our hope is that outside developers might find some use for it as well, perhaps for an SDK in another language not familiar to us.
 
-## Install
+## ⚙️ Installation
 
 ```shell
 npm install @ordercloud/oc-codegen
@@ -106,7 +106,7 @@ codegen.default
   });
 ```
 
-## Creating your own templates
+## 🔧 Creating your own templates
 
 Templates define the skeleton for how your code will be generated. We use [handlebars](https://handlebarsjs.com/) for the templating engine. There are three different types of files that can exist in your templates directory:
 
@@ -148,7 +148,7 @@ templates
 
 `ExtraModel.js` is a static file that will simply get copied over as-is during code generation
 
-### Custom Handlebars Helpers
+### 💁 Custom Handlebars Helpers
 
 Its very likely you'll need to format the data from the spec for your templates. In addition to the standard handlebars helpers you can define your own custom helpers to accomplish this.
 
@@ -184,3 +184,11 @@ oc-codegen -i './path/to/oc-spec.json' -t './path/to/templates-folder' -b './pat
 - AngularJS SDK
 - Angular SDK
  -->
+
+## 📄 License
+
+OrderCloud's oc-codegen is an open-sourced software licensed under the [MIT license](./LICENSE).
+
+## 🤝 Contributing
+
+Check out our [Contributing](./CONTRIBUTING.md) guide.
