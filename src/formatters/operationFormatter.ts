@@ -73,7 +73,7 @@ class OperationService {
       } else if (schema.allOf) {
         type = utility.getType(schema.allOf[0].$ref);
         requiredFields = schema.allOf.required;
-        hasRequiredFields = requiredFields.length > 0;
+        hasRequiredFields = requiredFields && requiredFields.length > 0;
       }
       return {
         name: utility.makeCamelCase(type),

@@ -40,12 +40,13 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "npm run build:code && npm run build:docs",
+    "build": "npm run build:code && npm test && npm run build:docs",
     "build:code": "tsc -p .",
     "postbuild:code": "sed -i 's/\"files\":/\"_files\":/' lib/package.json",
     "build:docs": "typedoc src/",
     "postbuild:docs": "shx rm docs/index.html && shx mv docs/globals.html docs/index.html && sed -i 's/globals.html/index.html/g' docs/index.html",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "test": "node tests/smoke-test"
   },
   "dependencies": {
     "chalk": "^2.4.2",
